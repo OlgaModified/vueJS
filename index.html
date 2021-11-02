@@ -4,11 +4,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Vue JS</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://unpkg.com/vue@3.0.2"></script>
 </head>
 <body>
     <h1>Hello Monkeys!</h1>
-    <div>
-        <h3>Some more checnges</h3>
+
+    <div id="app-1">
+       
     </div>
+
+    <div id="app">
+        <div v-if="true">
+            <h1> Template is her and now! </h1>
+            <p> {{ title }} </p>
+            <p> {{ author }} </p>
+            <p> {{ created_at }} </p>
+        </div>
+
+        <hr>
+       
+        <h3>Counter:  - {{ counter }} </h3>
+         <button v-on:click="counter++">Add value</button>
+         <button v-on:click="counter--">Decrease value</button>
+       <!--   <div @click="title = 'dbl click over me'">Change title</div> -->
+         <div @click="changeTitle('Book title')">Change something</div>
+    </div>
+
+    <div id="app-2">
+        <span v-bind:title="message">
+          Hover your mouse over me for a few seconds
+          to see my dynamically bound title!
+        </span>
+    </div>
+
+    <p>Some paragraph</p>
+
 </body>
+<script src="app.js"></script>
+
 </html>
