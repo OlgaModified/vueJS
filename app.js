@@ -20,6 +20,13 @@ const app = Vue.createApp({
                 action.isDone = !action.isDone
             }
             
+        },
+        computed: {
+            filteredActions(){
+                return this.actions.filter((action)=>
+                    action.isDone
+                )
+            }
         }
 })
 

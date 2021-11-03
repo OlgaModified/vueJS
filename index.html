@@ -59,7 +59,7 @@
         <h1> Hero action Plan: </h1>
         <div v-if="showActions">
             <ul>
-                <li v-for="action in actions" 
+                <li v-for="action in filteredActions" 
                     v-bind:class="{done: action.isDone }" 
                     @click="markDone(action)"
                 >
