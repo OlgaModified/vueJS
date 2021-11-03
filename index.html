@@ -16,6 +16,10 @@
             margin: 20px;
             display: inline-block;
         }
+        img{
+            width: 100px;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
@@ -27,9 +31,11 @@
      <!-- App body -->
     <div id="app">      
          <!-- Attribute binding -->
+         <a :href="url">The Net Ninja Web Site</a>         
         <h1> Hero action Plan: </h1>
-        <div v-if="showActions"> 
+        <div :if="showActions"> 
             <div v-for="action in actions">
+                <img :src="action.img" :alt="action.hero" style>
                 <p> {{ action.title }} - {{ action.hero }} </p>               
                  
             </div>           
@@ -50,7 +56,9 @@
 
     
 
-    
+<footer>
+    <a href="http://www.freepik.com">Designed by macrovector / Freepik</a>
+</footer>    
 
 </body>
 <script src="app.js"></script>
