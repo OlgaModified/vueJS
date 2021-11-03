@@ -18,8 +18,32 @@
         }
         img{
             width: 100px;
-            border-radius: 50%;
+            border-radius: 10px;
         }
+        body{
+        background: #eee;
+        max-width: 960px;
+        margin: 20px auto;
+        }
+        p, h3, ul{
+        margin: 0;
+        padding: 0;
+        }
+        li{
+        list-style-type: none;
+        background: #fff;
+        margin: 20px auto;
+        padding: 10px 20px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        }
+        li.done{
+        background: #00c100;
+        color: white;
+        }
+
     </style>
 </head>
 <body>
@@ -33,15 +57,18 @@
          <!-- Attribute binding -->
          <a :href="url">The Net Ninja Web Site</a>         
         <h1> Hero action Plan: </h1>
-        <div :if="showActions"> 
-            <div v-for="action in actions">
-                <img :src="action.img" :alt="action.hero" style>
-                <p> {{ action.title }} - {{ action.hero }} </p>               
-                 
-            </div>           
-            
-                    
-        </div>        
+        <div v-if="showActions">
+            <ul>
+                <li v-for="action in actions" 
+                    v-bind:class="{done: action.isDone }" 
+                    @click="markDone(action)"
+                >
+                    <img :src="action.img" :alt="action.hero" style>
+                    <h3> {{ action.title }}</h3>
+                    <p> {{ action.hero }} </p> 
+                </li>
+            </ul>                    
+        </div>                       
 
         <button @click="toggleShowActions">
             <span  v-if="showActions"> Hide Actions</span>
