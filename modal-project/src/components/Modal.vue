@@ -13,7 +13,12 @@
 
 
 export default {
-  props: ['header', 'text', 'theme'],
+  props: {
+      title: String,
+      header: String,
+      theme: String,
+      modal2: Object
+  },
   methods: {
       closeModal(){
           this.$emit('close')
