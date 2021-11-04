@@ -69,9 +69,9 @@ export default {
 
 button:disabled,
 button[disabled]{
-  border: 1px solid #999999;
-  background-color: #cccccc;
-  color: #666666;
+  opacity: 0.2;
+  cursor: not-allowed;
+  
 }
 
 </style>
